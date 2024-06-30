@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World Program</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Hello World Program</h2>
+
+        <!-- Button to display Hello World program -->
+        <button onclick="showHelloWorldProgram()">Show Program</button>
+        
+        <!-- Program and explanation -->
+        <div class="helloworld-program" id="helloWorldProgram" style="display: none;">
+            <h3>Hello World Program</h3>
+            <pre class="code-container">
+                <code>
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+                </code>
+            </pre>
+            <div class="explanation">
+                <h3>Explanation</h3>
+                <p>
+                    This Java program prints "Hello, World!" to the console.
+                    It demonstrates the basic structure of a Java program with a main method.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showHelloWorldProgram() {
+            var helloWorldProgram = document.getElementById('helloWorldProgram');
+            helloWorldProgram.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

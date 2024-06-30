@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Numbers Program</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Prime Numbers Program</h2>
+
+        <!-- Input for user to enter the limit -->
+        <div class="input-group">
+            <label for="limit">Enter a limit:</label>
+            <input type="number" id="limit" min="1" required>
+            <button onclick="calculateAndDisplayPrimeNumbers()">Calculate Prime Numbers</button>
+        </div>
+        
+        <!-- Display area for prime numbers -->
+        <div id="primeNumbersResult" class="prime-numbers-result" style="display: none;">
+            <h3>Prime numbers</h3>
+            <div id="primeNumbersList"></div>
+        </div>
+        
+        <!-- Button to show the program code -->
+        <button onclick="showPrimeNumbersProgram()">Show Program</button>
+        
+        <!-- Program and explanation -->
+        <div class="primenumbers-program" id="primeNumbersProgram" style="display: none;">
+            <h3>Prime Numbers Program</h3>
+            <pre class="code-container">
+                <code>
+public class PrimeNumbers {
+    public static void main(String[] args) {
+        int n = 20; // Change this to the desired limit
+        System.out.println("Prime numbers up to " + n + ":");
+        for (int i = 2; i <= n; i++) {
+            if (isPrime(i)) {
+                System.out.print(i + " ");
+            }
+        }
+    }
+
+    // Method to check if a number is prime
+    public static boolean isPrime(int num) {
+        if (num <= 1) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+                </code>
+            </pre>
+            <div class="explanation">
+                <h3>Explanation</h3>
+                <p>
+                    This Java program prints all prime numbers up to a specified limit (`n`).
+                    It uses a method `isPrime()` to check if each number is prime by iterating up to the square root of the number.
+                    Prime numbers are those greater than 1 that have no divisors other than 1 and themselves.
+                </p>
+            </div>
+        </div>
+
+        <!-- Explanation -->
+        <div class="explanation">
+            <h3>Explanation</h3>
+            <p>
+                This section provides an explanation of the Prime Numbers program.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function calculateAndDisplayPrimeNumbers() {
+            var limit = document.getElementById('limit').value;
+
+            // Check if the input is valid
+            if (isNaN(limit) || limit < 1) {
+                alert('Please enter a positive integer.');
+                return;
+            }
+
+            // Convert limit to integer
+            limit = parseInt(limit);
+
+            // Calculate prime numbers up to the limit
+            var primeNumbers = [];
+            for (var i = 2; i <= limit; i++) {
+                if (isPrime(i)) {
+                    primeNumbers.push(i);
+                }
+            }
+
+            // Display prime numbers
+            displayPrimeNumbers(primeNumbers);
+        }
+
+        function isPrime(num) {
+            if (num <= 1) {
+                return false;
+            }
+            for (var i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function displayPrimeNumbers(primeNumbers) {
+            var primeNumbersList = document.getElementById('primeNumbersList');
+            primeNumbersList.innerHTML = ''; // Clear previous results
+
+            if (primeNumbers.length === 0) {
+                primeNumbersList.textContent = 'No prime numbers found.';
+            } else {
+                var primeNumbersText = primeNumbers.join(', ');
+                primeNumbersList.textContent = primeNumbersText;
+            }
+
+            // Show the result area
+            var primeNumbersResult = document.getElementById('primeNumbersResult');
+            primeNumbersResult.style.display = 'block';
+        }
+
+        function showPrimeNumbersProgram() {
+            var primeNumbersProgram = document.getElementById('primeNumbersProgram');
+            primeNumbersProgram.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
