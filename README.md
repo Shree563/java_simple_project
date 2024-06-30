@@ -19,7 +19,7 @@ To clone this repository and run the Java programs in Eclipse, follow these step
    - Browse to the directory where you cloned the repository.
    - Select the project folder (`java_simple_project`) and click `Finish`.
 
-3. **Run the Programs**: run the main.java program where it will act like a main interface to redirect to other pages
+3. **Run the Programs**: run the MainPage.java program where it will act like a main interface to redirect to other pages
 
 ## How to Use:
 - Each program can be accessed by clicking on the respective buttons on the main page.
