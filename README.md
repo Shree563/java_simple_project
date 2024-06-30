@@ -2,6 +2,25 @@
 
 This repository contains a collection of programs demonstrating knowledge in HTML, CSS, JavaScript, and Java.
 
+To clone this repository and run the Java programs in Eclipse, follow these steps:
+
+1. **Clone the Repository**:
+   - Open your terminal (or Git Bash).
+   - Navigate to the directory where you want to clone the repository.
+   - Use the following command to clone the repository:
+     ```bash
+     git clone https://github.com/Shree563/java_simple_project.git
+     ```
+
+2. **Open in Eclipse**:
+   - Open Eclipse IDE.
+   - Go to `File` > `Import`.
+   - Select `Existing Projects into Workspace` and click `Next`.
+   - Browse to the directory where you cloned the repository.
+   - Select the project folder (`java_simple_project`) and click `Finish`.
+
+3. **Run the Programs**: run the main.java program where it will act like a main interface to redirect to other pages
+
 ## How to Use:
 - Each program can be accessed by clicking on the respective buttons on the main page.
 
